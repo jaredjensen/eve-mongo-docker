@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web:
+    container_name: eve_web1
+    image: eve-api:1.0
+    ports:
+      - "8099:80"
+    links:
+      - db
+  db:
+    container_name: mongo1
+    image: mongo
+    ports:
+      - "27017:27017"
